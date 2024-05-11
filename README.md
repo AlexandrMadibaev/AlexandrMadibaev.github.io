@@ -1,1 +1,0 @@
-# AlexandrMadibaev.github.io
