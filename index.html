@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Интерактивный контент</title>
     <style>
         body {
@@ -23,33 +23,32 @@
             transform: translate(-50%, -50%);
             color: white;
             text-align: center;
-            font-size: 7vw;
+            font-size: 8vw;
             cursor: pointer;
-            transition: transform 0.5s ease-in-out, font-size 0.5s ease-in-out; /* Добавляем плавные переходы */
-
+            transition: transform 0.3s ease, font-size 0.3s ease; /* Добавляем плавные переходы */
         }
 
         #text:hover {
             transform: translate(-50%, -50%) scale(1.1); /* Увеличиваем текст при наведении */
-            font-size: 8vw; /* Увеличиваем размер текста при наведении */
+            font-size: 10vw; /* Увеличиваем размер текста при наведении */
         }
     </style>
 </head>
 <body>
     <canvas id="stars"></canvas>
     <div id="text" onclick="changeText()">Нажми меня</div>
-    <audio id="audio" src="audio/main.mp3" preload="auto"></audio>
+    <audio id="audio" src="main.mp3" preload="auto"></audio>
     <script>
         var canvas = document.getElementById('stars');
         var context = canvas.getContext('2d');
         var stars = [];
         var textIndex = 0;
         var texts = [
-            "Тася, моя родная ♥",
+        "Тася, моя родная ♥",
             "Я хочу сказать тебе",
             "Ты - моя звезда на небесах", 
             "Светящаяся во тьме моих дней.",
-            "С тобой я узнал, что значит настоящая любовь, 
+            "С тобой я узнал, что значит настоящая любовь",
             "Что это не просто слова, а состояние души ", 
             "В которой ты - единственная причина моего существования.",
             "Мы пережили столько вместе ", 
@@ -64,14 +63,13 @@
             "Чтобы вернуться к тебе ", 
             "Чтобы снова обнять твою душу и сказать:",
             "Я люблю тебя любимая больше, чем когда-либо прежде.",
-            "Пусть наши сердца вновь соединятся 
-            "В вечной любви, которая светит ярче любой звезды на небесах."
+            "Пусть наши сердца вновь соединятся",
+            "В вечной любви, которая светит ярче любой звезды на небесах.",
             "А сейчас",
             "Будет играть",
             "Музыка",
             "Возможно она тебе напомнит о нас...",
-            ""
-            
+            ""            
         ];
 
         // Устанавливаем размер canvas равным размеру окна браузера
@@ -83,7 +81,7 @@
                 stars.push({
                     x: Math.random() * canvas.width,
                     y: Math.random() * canvas.height,
-                    radius: Math.random() * 2,
+                    radius: Math.random() * 0.75,
                     speed: Math.random() * 0.5
                 });
             }
