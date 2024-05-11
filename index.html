@@ -23,14 +23,14 @@
             transform: translate(-50%, -50%);
             color: white;
             text-align: center;
-            font-size: 8vw;
+            font-size: 7vw;
             cursor: pointer;
             transition: transform 0.3s ease, font-size 0.3s ease; /* Добавляем плавные переходы */
         }
 
         #text:hover {
             transform: translate(-50%, -50%) scale(1.1); /* Увеличиваем текст при наведении */
-            font-size: 10vw; /* Увеличиваем размер текста при наведении */
+            font-size: 8vw; /* Увеличиваем размер текста при наведении */
         }
     </style>
 </head>
@@ -72,7 +72,7 @@
                 stars.push({
                     x: Math.random() * canvas.width,
                     y: Math.random() * canvas.height,
-                    radius: Math.random() * 0.75,
+                    radius: Math.random() * 2,
                     speed: Math.random() * 0.5
                 });
             }
