@@ -71,7 +71,8 @@
             "А сейчас",
             "Будет играть",
             "Песня",
-            "Которая возможно напомнит тебе о нас..."        
+            "Которая возможно напомнит тебе о нас..."
+            ""         
         ];
 
         // Устанавливаем размер canvas равным размеру окна браузера
@@ -119,16 +120,21 @@
         animate();
 
         function changeText() {
-            var text = document.getElementById("text");
-            if (textIndex < texts.length) {
-                text.innerHTML = texts[textIndex];
-                if (textIndex === texts.length - 1) {
-                    var audio = document.getElementById('audio');
-                    audio.play();
-                }
-                textIndex++;
-            }
+    var text = document.getElementById("text");
+    if (textIndex < texts.length) {
+        text.innerHTML = texts[textIndex];
+        textIndex++;
+        if (textIndex === texts.length) {
+            var playButton = document.getElementById('playButton');
+            playButton.style.display = 'block'; // Показываем кнопку после отображения последнего текста
         }
+    }
+}
+
+function playSong() {
+    var audio = document.getElementById('audio');
+    audio.play();
+}
     </script>
 </body>
 </html>
