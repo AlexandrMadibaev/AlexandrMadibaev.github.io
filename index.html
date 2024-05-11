@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Моё послание тебе</title>
-    <link rel="icon" href="https://github.com/AlexandrMadibaev/AlexandrMadibaev.github.io/blob/main/favicon.ico" type="image/x-icon">
+    <title>Интерактивный контент</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <style>
         body {
             background-color: black;
@@ -27,9 +27,8 @@
             font-size: 8vw;
             cursor: pointer;
             transition: transform 0.3s ease, font-size 0.3s ease; /* Добавляем плавные переходы */
-            user-select: none;
-            -webkit-tap-highlight-color: transparent; /* Отключаем выделение текста */
-            outline: none;
+            user-select: none; /* Отключаем выделение текста */
+            -webkit-tap-highlight-color: transparent; /* Отключаем выделение текста на Android */
         }
 
         #text:hover {
@@ -48,7 +47,7 @@
         var stars = [];
         var textIndex = 0;
         var texts = [
-        "Тася, моя родная ♥",
+            "Тася, моя родная ♥",
             "Я хочу сказать тебе",
             "Ты - моя звезда на небесах", 
             "Светящаяся во тьме моих дней.",
@@ -72,7 +71,7 @@
             "А сейчас",
             "Будет играть",
             "Песня",
-            "Которая возможно напомнит тебеы о нас..."        
+            "Которая возможно напомнит тебе о нас..."        
         ];
 
         // Устанавливаем размер canvas равным размеру окна браузера
@@ -121,12 +120,13 @@
 
         function changeText() {
             var text = document.getElementById("text");
-            if (textIndex < texts.length - 1) {
+            if (textIndex < texts.length) {
                 text.innerHTML = texts[textIndex];
+                if (textIndex === texts.length - 1) {
+                    var audio = document.getElementById('audio');
+                    audio.play();
+                }
                 textIndex++;
-            } else {
-                var audio = document.getElementById('audio');
-                audio.play();
             }
         }
     </script>
